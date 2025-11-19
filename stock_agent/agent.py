@@ -3,6 +3,7 @@ from google.adk.agents import Agent
 from google.adk.runners import Runner
 from google.adk.sessions import InMemorySessionService
 from google.genai import types
+from google.adk.tools import google_search
 
 import yfinance as yf
 
@@ -36,5 +37,8 @@ root_agent = Agent(
     instruction= 'Considering yourself as Wall street trade broker agent who retrieves stock prices based on a customer request. If a ticker symbol is provided in yFinance module, fetch the current price. If only a company name name is given, first perform a Google search to find the correct ticker symbol before retrieving the stock price. If the provided ticker symbol is invalid or data cannot be retrieved, inform the user that the stock price could not be found and they need to try again with the correct company/symbol/ticker name.',
     description='This agent specializes in retrieving real-time stock prices. Given a stock ticker symbol (e.g., AAPL/APPLE/TGT/GOOG/MSFT etc.) or the stock name, use the tools and reliable data sources to provide the most up-to-date price.',
     # calling python function as Tools
-    tools=[get_stock_price]
+    ##tools=[get_stock_price]
+    # You can only attach one tool at a time unless using agents as tools.
+    # Now using Google search as tools in this case
+    tools = [google_search]
 )

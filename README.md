@@ -23,3 +23,7 @@ Choose model (1, 2): 1
 1. Google AI
 2. Vertex AI
 Choose a backend (1, 2): 1-->
+
+# Run Agent Now
+
+adk run stock_price

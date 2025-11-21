@@ -26,4 +26,8 @@ Choose a backend (1, 2): 1-->
 
 # Run Agent Now
 
-adk run stock_price
+adk run stock_agent
+
+# Run agent on a web browser
+
+adk web --port 8000

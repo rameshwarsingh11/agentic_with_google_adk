@@ -1,3 +1,4 @@
+#pip install yfinance
 #from google.adk.agents.llm_agent import Agent
 from google.adk.agents import Agent
 from google.adk.runners import Runner
